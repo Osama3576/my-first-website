@@ -1,0 +1,100 @@
+.main_con {
+  background-image: url('bg-01.jpg');
+
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.login_con {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 10px;
+  padding: 10rem;
+  width: 60rem;
+  margin: 0 auto;
+  background-color: #fdf4ff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.heading_con {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.heading_con h1 {
+  font-size: 4rem;
+  color: #4a044e;
+}
+.user_input {
+  margin-bottom: 3rem;
+}
+.user_input label {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+.user_input input,
+.user_Pass input {
+  color: #333;
+  line-height: 1.2;
+  font-size: 18px;
+  display: block;
+  width: 100%;
+  background: 0 0;
+  height: 60px;
+  padding: 0 20px;
+  border-radius: 5px;
+}
+.user_input input:focus,
+.user_Pass input:focus {
+  border-color: #f3e6f4;
+}
+
+.user_Pass {
+  margin-bottom: 3rem;
+}
+.user_Pass label {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.login_btn {
+  display: block;
+  font-size: 1.8rem;
+  padding: 2rem 2rem;
+  border-radius: 1rem;
+  background-color: #4a044e;
+  color: #fdf4ff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.login_btn:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 481px) {
+  .login_con {
+    padding: 5rem;
+  }
+}
+@media (max-width: 325px) {
+  .login_con {
+    padding: 2rem;
+  }
+  .user_input input,
+  .user_Pass input {
+    height: 40px;
+  }
+}
