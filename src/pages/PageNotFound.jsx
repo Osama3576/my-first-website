@@ -1,16 +1,18 @@
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import PageNav from '../components/PageNav';
 
 function PageNotFound() {
   return (
-    <div>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>PageNotFound</title>
-      </Helmet>
-      <PageNav />
-      this is not found page
-    </div>
+    <HelmetProvider>
+      <div>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>PageNotFound</title>
+        </Helmet>
+        <PageNav />
+        this is not found page
+      </div>
+    </HelmetProvider>
   );
 }
 

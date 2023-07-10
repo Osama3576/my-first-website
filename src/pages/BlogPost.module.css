@@ -1,0 +1,97 @@
+.blogpost_con {
+  height: auto;
+  width: 100%;
+  padding: 8rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 5rem;
+}
+.recentPost_con {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: left;
+  padding: 3rem 8rem;
+}
+.recentPost_con h1 {
+  margin-top: 8rem;
+  font-size: 3rem;
+}
+.recePost {
+  text-decoration: none;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  margin-top: 3rem;
+}
+.ul_con {
+  text-align: left;
+}
+.coment_con {
+  margin: 5rem 0;
+  width: 100%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+.coment_con h1 {
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+}
+.coment_con p {
+  font-size: 1.6rem;
+  margin-bottom: 5rem;
+}
+.form_con {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user_input label,
+.user_Pass label,
+.user_email label {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.user_input textarea {
+  width: 100%;
+  height: 15rem;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.user_input,
+.user_Pass,
+.user_email {
+  width: 50%;
+}
+.user_Pass input,
+.user_email input {
+  width: 100%;
+  height: 5rem;
+  margin-bottom: 3rem;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.comment_btn {
+  cursor: pointer;
+  width: 40rem;
+  padding: 2rem;
+  border-radius: 5px;
+  background-color: yellow;
+  border: none;
+  color: #4a044e;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s;
+}
+.comment_btn:hover {
+  transform: translateY(5px);
+}

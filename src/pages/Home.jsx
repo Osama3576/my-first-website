@@ -1,20 +1,26 @@
 import Footer from '../components/Footer';
 import MyIntro from '../components/MyIntro';
 import PageNav from '../components/PageNav';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 function Home() {
   return (
-    <div>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Home</title>
-        <link rel="canonical" href="http://mysite.com/example" />
-      </Helmet>
-      <PageNav />
-      <MyIntro />
+    <HelmetProvider>
+      <div>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Home</title>
+          <meta
+            name="description"
+            content="Home Page of code & I here you can find courses about development and much much more"
+          />
+          <meta name="keywords" content="HTML, CSS, JavaScript" />
+        </Helmet>
+        <PageNav />
+        <MyIntro />
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </HelmetProvider>
   );
 }
 

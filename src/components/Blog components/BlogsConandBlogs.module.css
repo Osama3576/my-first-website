@@ -1,0 +1,85 @@
+.blog_main_con {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 5rem;
+  margin-top: 5rem;
+  height: auto;
+  padding: 7rem;
+}
+.card {
+  width: 39rem;
+  height: 61rem;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card_img {
+  width: 100%;
+  height: 40%;
+  object-fit: cover;
+}
+.card_date {
+  color: #737c8c;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 1rem;
+}
+.card_heading {
+  font-size: 2.5rem;
+  margin: 1.5rem;
+  transition: all 0.3s;
+}
+.card_heading:hover {
+  color: #737c8c;
+}
+.card_para {
+  font-size: 1.8rem;
+  margin: 1.5rem;
+}
+.search_con {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-row: 1/4;
+  grid-column: 3/4;
+}
+.search_con input {
+  width: 20rem;
+  font-size: 16px;
+  padding: 8px 12px;
+  border: 1px solid #42413f;
+}
+.search_con p {
+  color: #42413f;
+  font-size: 1.8rem;
+  margin-top: 2rem;
+}
+.search_con h1 {
+  margin-top: 10rem;
+  font-size: 3rem;
+}
+.recePost {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+.readmore_btn {
+  display: inline-block;
+  margin: 2rem 1rem;
+  font-size: 1.6rem;
+  text-decoration: none;
+  border: 1px solid #42413f;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.readmore_btn:hover {
+  color: #fff;
+  background-color: #a21caf;
+  transform: translateY(3px);
+}

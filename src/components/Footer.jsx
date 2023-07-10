@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className={styles.footer_con}>
       <div className={styles.img_para_con}>
-        <img className={styles.footer_img} src="logo.png"></img>
+        <img className={styles.footer_img} src="../../logo.png"></img>
         <p>Copyright © 2022 codeiwebs.com</p>
       </div>
       <div className={styles.social_icons_con}>

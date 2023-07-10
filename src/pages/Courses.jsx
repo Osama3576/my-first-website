@@ -1,16 +1,17 @@
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import PageNav from '../components/PageNav';
 
 function Courses() {
   return (
-    <div>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Courses</title>
-      </Helmet>
-      <PageNav />
-      this is courses page
-    </div>
+    <HelmetProvider>
+      <div>
+        <Helmet>
+          <title>Courses</title>
+        </Helmet>
+        <PageNav />
+        this is courses page
+      </div>
+    </HelmetProvider>
   );
 }
 

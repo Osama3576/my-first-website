@@ -1,0 +1,46 @@
+.ComposeContainer {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.posting_con {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 10px;
+  padding: 10rem;
+  width: 60rem;
+  height: auto;
+  margin: 0 auto;
+  background-color: #fdf4ff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.img_url_con label,
+.img_Title_con label,
+.img_Post_con label {
+  display: block;
+  font-size: 1.8rem;
+  color: #4a044e;
+  margin-bottom: 1rem;
+}
+.img_url_con input,
+.img_Title_con input,
+.img_Post_con textarea {
+  width: 100%;
+  height: 5rem;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.addPost_btn {
+  height: 5rem;
+  background-color: #4a044e;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.addPost_btn:hover {
+  transform: translateY(5px);
+}

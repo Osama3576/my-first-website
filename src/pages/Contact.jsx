@@ -1,19 +1,20 @@
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import ContactContent from '../components/ContactContent';
 import Footer from '../components/Footer';
 import PageNav from '../components/PageNav';
 
 function Contact() {
   return (
-    <div>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Contact Us</title>
-      </Helmet>
-      <PageNav />
-      <ContactContent />
-      <Footer />
-    </div>
+    <HelmetProvider>
+      <div>
+        <Helmet>
+          <title>Contact Us</title>
+        </Helmet>
+        <PageNav />
+        <ContactContent />
+        <Footer />
+      </div>
+    </HelmetProvider>
   );
 }
 

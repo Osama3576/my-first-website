@@ -34,7 +34,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
 }
-.active {
+.activenav {
   display: flex;
   gap: 2rem;
 }
