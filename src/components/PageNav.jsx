@@ -2,8 +2,9 @@
 import { NavLink } from 'react-router-dom';
 import styles from './PageNav.module.css';
 import style from './BoxIcons.module.css';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 function PageNav() {
+  const [title, setTitle] = useState('Code & I');
   const navbar = useRef(null);
   const menuIcon = useRef(null);
   useEffect(() => {
@@ -22,6 +23,39 @@ function PageNav() {
     };
   }, [menuIcon]);
 
+  /////////////////////////functionsssss for changing title
+  // function handleHomeClick() {
+  //   setTitle('Code & I | Home');
+  // }
+  // function handleBlogClick() {
+  //   setTitle('Blog Code & I');
+  // }
+
+  // function handleCoursesClick() {
+  //   setTitle('Courses of Code & I');
+  // }
+  // function handleAboutClick() {
+  //   setTitle('About Code & I');
+  // }
+  // function handleContactClick() {
+  //   setTitle('Contact Us Code & I');
+  // }
+  // function handleLoginClick() {
+  //   setTitle('Login Code & I');
+  // }
+  // function handleSignupClick() {
+  //   setTitle('Sign Up Code & I');
+  // }
+
+  // useEffect(
+  //   function () {
+  //     document.title = `${title}`;
+  //     return () => {
+  //       document.title = 'Code & I';
+  //     };
+  //   },
+  //   [title]
+  // );
   return (
     <nav className={styles.nav_con}>
       <NavLink to="/" className={styles.logo}>
