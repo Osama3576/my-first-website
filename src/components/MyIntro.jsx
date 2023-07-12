@@ -9,6 +9,7 @@ function MyIntro() {
         <h1>
           Hi,I'm <span>Osama</span>.
         </h1>
+
         <div className={styles.text_animate}>
           <h3>Full Stack web-Developer</h3>
         </div>

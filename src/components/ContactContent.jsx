@@ -1,6 +1,44 @@
 /* eslint-disable react/no-unescaped-entities */
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import styles from './ContactContent.module.css';
+import { useState } from 'react';
+import { toast } from 'react-hot-toast';
+import { createContact } from '../services/apiContact';
 function ContactContent() {
+  const queryClient = useQueryClient();
+  const [fullname, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [mobilenumber, setNumber] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const { mutate, isLoading } = useMutation({
+    mutationFn: createContact,
+    onSuccess: () => {
+      toast.success('Contact Form sucessfully submitted');
+      queryClient.invalidateQueries({
+        queryKey: ['contact'],
+      });
+    },
+    onError: error => {
+      toast.error(error.message);
+    },
+  });
+  const handleSubmit = function (e) {
+    e.preventDefault();
+    const contactData = {
+      fullname,
+      email,
+      mobilenumber,
+      subject,
+      message,
+    };
+    mutate(contactData);
+    setFullName('');
+    setEmail('');
+    setSubject('');
+    setNumber('');
+    setMessage('');
+  };
   return (
     <div className={styles.main_con}>
       <section className={styles.contact} id="contact">
@@ -8,32 +46,57 @@ function ContactContent() {
           Contact <span>Me!</span>
         </h2>
 
-        <form action="#">
+        <form onSubmit={handleSubmit} action="#">
           <div className={styles.input_box}>
             <div className={styles.input_field}>
-              <input type="text" placeholder="Full Name" required />
+              <input
+                value={fullname}
+                onChange={e => setFullName(e.target.value)}
+                type="text"
+                placeholder="Full Name"
+                required
+              />
               <span className={styles.focus}></span>
             </div>
             <div className={styles.input_field}>
-              <input type="email" placeholder="Email Adress" required />
+              <input
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                type="email"
+                placeholder="Email Adress"
+                required
+              />
               <span className={styles.focus}></span>
             </div>
           </div>
           <div className={styles.input_box}>
             <div className={styles.input_field}>
-              <input type="number" placeholder="Mobile Number" required />
+              <input
+                value={mobilenumber}
+                onChange={e => setNumber(e.target.value)}
+                type="number"
+                placeholder="Mobile Number"
+                required
+              />
               <span className={styles.focus}></span>
             </div>
             <div className={styles.input_field}>
-              <input type="email" placeholder="Email Subject" required />
+              <input
+                value={subject}
+                onChange={e => setSubject(e.target.value)}
+                type="text"
+                placeholder="Email Subject"
+                required
+              />
               <span className={styles.focus}></span>
             </div>
           </div>
 
           <div className={styles.textarea_field}>
             <textarea
-              name=""
-              id=""
+              value={message}
+              onChange={e => setMessage(e.target.value)}
+              name="message"
               cols="30"
               rows="10"
               placeholder="Your message"
@@ -43,7 +106,9 @@ function ContactContent() {
           </div>
 
           <div className={`${styles.btn_box} btns`}>
-            <button className={styles.btn}>Submit</button>
+            <button className={styles.btn} disabled={isLoading}>
+              Submit
+            </button>
           </div>
         </form>
       </section>

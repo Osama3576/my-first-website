@@ -7,8 +7,10 @@ function BlogOpened({ currentPost }) {
   return (
     <div className={styles.blog_open_con}>
       <h1 className={styles.title}>{currentPost.title}</h1>
-      <p className={styles.date}>by codewebs at :{currentPost.newdate}</p>
-      <img src={`../../${currentPost.url}`} alt={currentPost.title} />
+      <p className={styles.date}>
+        by codewebs at : {currentPost.newdate.slice(0, 10)}
+      </p>
+      <img src={`${currentPost.url}`} alt={currentPost.title} />
       <p className={styles.post_para}>{currentPost.post}</p>
     </div>
   );

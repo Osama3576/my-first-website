@@ -4,10 +4,18 @@ import styles from './BlogsConandBlogs.module.css';
 import BlogCard from './BlogCard';
 import BlogSearchbar from './BlogSearchbar';
 import { useState } from 'react';
-import storage from '../../Poststorage/Posts';
+import { useQuery } from '@tanstack/react-query';
+import { getPosts } from '../../services/apiPosts';
+import Spinner from '../Spinner/Spinner';
+// import storage from '../../Poststorage/Posts';
 
 function BlogContentAll() {
   const [searchQuery, setSearchQuery] = useState('');
+  const { data: storage, isLoading } = useQuery({
+    queryKey: ['cabins'],
+    queryFn: getPosts,
+  });
+  if (isLoading) return <Spinner />;
 
   const searchedPosts =
     searchQuery.length > 0

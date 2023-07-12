@@ -3,14 +3,22 @@ import { NavLink } from 'react-router-dom';
 import styles from './PageNav.module.css';
 import style from './BoxIcons.module.css';
 import { useEffect, useRef, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { getUserData } from '../services/apiAuth';
+import Spinner from './Spinner/Spinner';
 function PageNav() {
   const navbar = useRef(null);
   const menuIcon = useRef(null);
+  const { isLoading, data: user } = useQuery({
+    queryKey: ['user'],
+    queryFn: getUserData,
+  });
+  const isAuthenticated = user?.role === 'authenticated';
+
   useEffect(() => {
     function classback() {
       navbar.current.classList.toggle('activenav');
       menuIcon.current.classList.toggle('bx-x');
-      console.log('clicked');
     }
 
     const iconElement = menuIcon.current;
@@ -61,11 +69,17 @@ function PageNav() {
             About
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/login" className={styles.ctaLink}>
-            Login
-          </NavLink>
-        </li>
+
+        {!isAuthenticated ? (
+          <li>
+            <NavLink to="/login" className={styles.ctaLink}>
+              Login
+            </NavLink>
+          </li>
+        ) : (
+          ''
+        )}
+
         <li>
           <NavLink to="/signup" className={styles.ctaLink}>
             Sign up

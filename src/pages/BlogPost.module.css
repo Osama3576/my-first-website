@@ -13,11 +13,12 @@
   align-items: center;
 
   text-align: left;
-  padding: 3rem 8rem;
+  padding: 3rem 10rem;
 }
 .recentPost_con h1 {
   margin-top: 8rem;
   font-size: 3rem;
+  margin-bottom: 2rem;
 }
 .recePost {
   text-decoration: none;
@@ -29,6 +30,7 @@
 }
 .ul_con {
   text-align: left;
+  margin-bottom: 2rem;
 }
 .coment_con {
   margin: 5rem 0;
@@ -94,4 +96,58 @@
 }
 .comment_btn:hover {
   transform: translateY(5px);
+}
+@media (max-width: 1200px) {
+  .blogpost_con {
+    padding: 5rem;
+  }
+  .coment_con {
+    height: 70rem;
+  }
+  .recentPost_con {
+    padding: 3rem 4rem;
+  }
+}
+@media (max-width: 800px) {
+  .recentPost_con {
+    padding: 3rem 2rem;
+  }
+}
+@media (max-width: 600px) {
+  .blogpost_con {
+    grid-template-columns: 1fr;
+  }
+  .coment_con {
+    grid-row: 2;
+    padding: 2rem;
+  }
+}
+@media (max-width: 482px) {
+  .blogpost_con {
+    padding: 1rem;
+  }
+}
+@media (max-width: 415px) {
+  .ul_con {
+    place-self: flex-start;
+  }
+  .recentPost_con {
+    padding: 3rem 6rem;
+  }
+}
+@media (max-width: 380px) {
+  .coment_con p {
+    margin-bottom: 2rem;
+  }
+  .user_input,
+  .user_Pass,
+  .user_email {
+    width: 100%;
+  }
+  .blogpost_con {
+    padding: 0.5rem;
+  }
+  .recentPost_con h1 {
+    margin-top: 0;
+  }
 }
